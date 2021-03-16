@@ -4,17 +4,12 @@
 # https://aka.ms/yaml
 
 trigger:
-
 - '*'
 
- 
 
 pool:
-
   vmImage: 'ubuntu-18.04'
-
   demands:
-
     - npm
 
  
@@ -30,7 +25,6 @@ variables:
  
 
 steps:
-
 - task: UseDotNet@2
 
   displayName: 'Use .NET Core SDK $(dotnetSdkVersion)'
@@ -116,11 +110,7 @@ steps:
  
 
 - task: PublishPipelineArtifact@1
-
   inputs:
-
     targetPath: '$(Build.ArtifactStagingDirectory)/$(buildConfiguration)'
-
     artifact: 'buildArtifacts'
-
 publishLocation: 'pipeline'
